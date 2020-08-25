@@ -36,9 +36,6 @@ module.exports = {
 
     // path - путь к директории, где будет храниться собранный проект
     path: path.resolve(__dirname, './dist'),
-
-    // publicPath - используется для обновления URL внутри CSS и HTML файлов во время генерации production-сборки
-    publicPath: 'dist',
   },
 
   // plugins - содержит список подключаемых плагинов
@@ -52,6 +49,32 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+
+  // По умолчанию webpack способен работать только js-файлами.
+  // Но с помощью лоадеров webpack способен работать и с другими типами файлов.
+  module: {
+    rules: [
+      // каждый объект описывает определенный тип лоадера
+      {
+        // ключ test - регулярное выражение, которое говорит, что если расширения файлов, которые webpack встречает в качестве импортов,
+        // соответствуют данной регулярке, то webpack должен использовать лоадеры, описанные в свойстве use
+        test: /\.css$/,
+        // webpack считывает лоадеры справа-налево, первым считывает css-loader
+        // css-loader - позволяет webpack понимать импорты css внутри css и js файлов
+        // style-loader - добавляет стили в секцию head в html
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        // file-loader - позволяет работать с файлами
+        test: /\.(png|jpg|svg|gif)$/,
+        use: ['file-loader'],
+      },
+      {
+        test: /\.(ttf|woff|woff2|eot)$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
 
   // настройка devServer
   devServer: {
