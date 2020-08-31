@@ -7,6 +7,9 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 // clean-webpack-plugin необходимо также подключить в поле plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+// copy-webpack-plugin необходимо также подключить в поле plugins
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports = {
   // context - настройка, которая указывает в какой директории лежат все исходники приложения
   // path.resolve() - принимает составные части путей и возвращает абсолютный путь
@@ -68,6 +71,16 @@ module.exports = {
       template: './index.html',
     }),
     new CleanWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          // // from - откуда копируем
+          from: path.resolve(__dirname, 'src/assets/favicon.ico'),
+          // // to - куда копируем
+          to: path.resolve(__dirname, 'dist'),
+        },
+      ],
+    }),
   ],
 
   // module - настройка, которая позволяет описывать то, как webpack должен работать с подключаемыми модулями.

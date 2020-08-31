@@ -2,6 +2,14 @@
 
 ------------
 
+Доступные webpack плагины:
+https://webpack.js.org/plugins/
+
+Доступные webpack загрузчики:
+https://webpack.js.org/loaders/
+
+------------
+
 Создаем *package.json*:  
 `npm init -y` 
 
@@ -9,16 +17,17 @@
 
 Устанавливаем плагины с флагом -D, которые необходимы только на этапе разработки (плагин будет отображается в "devDependencies" файла package.json):   
 
-`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse`
+`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse copy-webpack-plugin`
 
 Используемые плагины для разработки:
 - **webpack** - непосредственно webpack
 - **webpack-cli** - консольные команды для работы с webpack
 - **webpack-dev-server** - локальный сервер с livereload - живая перезагрузка браузера, собирает проект в памяти, не создавая билд-файлов, за счёт чего имеет высокую скорость сборки в режиме разработки 
-- **path** - для работы с путями (подключить в webpack.config.js)
+- **path** - node.js-плагин для работы с путями (подключить в webpack.config.js)
 - **html-webpack-plugin** - позволяет взаимодействовать с index.html – во время сборки автоматически подключает все скрипты в index.html и добавляет index.html в папку сборки (подключить в webpack.config.js)
 - **clean-webpack-plugin** – очищает папку сборки перед новой сборкой (подключить в webpack.config.js)
 - **papaparse** - для работы *csv-loader* необходимо дополнительно установить *papaparse*, который парсит *csv* в *js*
+- **copy-webpack-plugin** - позволяет переносить статические файлы из одного места в другое (подключить в webpack.config.js)
 
 Используемые загрузчики (loaders) для разработки:
 - **css-loader** - позволяет webpack понимать импорты css внутри css и js файлов
@@ -44,12 +53,12 @@
 - *npm run build* – для сборки проекта в режиме production (все js-файлы сбилжены в единый файл)
 
 ```json
-		"scripts": {
-			"dev": "webpack --mode development",
-			"watch": "webpack --mode development --watch",
-			"start": "webpack-dev-server --mode development --open",
-			"build": "webpack --mode production"
-		}
+	"scripts": {
+		"dev": "webpack --mode development",
+		"watch": "webpack --mode development --watch",
+		"start": "webpack-dev-server --mode development --open",
+		"build": "webpack --mode production"
+	}
 ```
 
 ------------
