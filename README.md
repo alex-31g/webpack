@@ -81,4 +81,25 @@ https://webpack.js.org/loaders/
 
 ------------
 
+Работа некоторых фич необходима только в режиме development.
+Так, например, создание карт кода, которые мы задаем в настройке devtool в *webpack.config.js*, необходимо только в режиме development.
+Для этих целей необходимо указывать режим - dev или prod. Делаем это с помощью плагина *cross-env*:
+
+`npm i -D cross-env`
+
+Далее в *package.json*, в разделе "scripts", модернизируем описанные выше команды, указывая значения для системной переменной NODE_ENV:
+
+```json
+	"scripts": {
+		"dev": "cross-env NODE_ENV=development webpack --mode development",
+		"watch": "cross-env NODE_ENV=development webpack --mode development --watch",
+		"start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+		"build": "cross-env NODE_ENV=production webpack --mode production"
+	}
+```
+
+Считывание заданной переменной смотреть в файле *webpack.config.js*, где она учавствует в конфигурации webpack.
+
+------------
+
 В корне проекта создаем конфигурационный файл *webpack.config.js*
