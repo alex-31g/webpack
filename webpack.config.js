@@ -131,6 +131,7 @@ module.exports = {
           // добавляем дополнительные опции при работе с лоадером
           options: {
             presets: ['@babel/preset-env'],
+            plugins: ['@babel/plugin-proposal-class-properties'],
           },
         },
       },

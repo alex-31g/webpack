@@ -44,12 +44,13 @@ https://webpack.js.org/loaders/
 
 Установка:
 
-`npm i -D @babel/core babel-loader @babel/preset-env @babel/polyfill`
+`npm i -D @babel/core babel-loader @babel/preset-env @babel/polyfill @babel/plugin-proposal-class-properties`
 
 **@babel/core** - непосредственно babel
 **babel-loader** - загрузчик, который позволяет работать с babel
 **@babel/preset-env** - предустановка, которая позволяет использовать последнюю версию JavaScript без необходимости управления тем, какие преобразования синтаксиса необходимы вашей целевой среде
 **@babel/polyfill** - необходимый полифилл, который необходимо подключить в webpack.config.js в поле entry.main
+**@babel/plugin-proposal-class-properties** - плагин, который позволяет работать с классами
 
 ------------
 
