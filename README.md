@@ -44,12 +44,12 @@
 - *npm run build* – для сборки проекта в режиме production (все js-файлы сбилжены в единый файл)
 
 ```json
-	"scripts": {
-    "dev": "webpack --mode development",
-    "watch": "webpack --mode development --watch",
-		"start": "webpack-dev-server --mode development --open",
-		"build": "webpack --mode production"
-  },
+		"scripts": {
+			"dev": "webpack --mode development",
+			"watch": "webpack --mode development --watch",
+			"start": "webpack-dev-server --mode development --open",
+			"build": "webpack --mode production"
+		}
 ```
 
 ------------
