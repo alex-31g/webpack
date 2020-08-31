@@ -1,12 +1,15 @@
 # WEBPACK
 
+------------
+
 Создаем *package.json*:  
 `npm init -y` 
 
 ------------
 
 Устанавливаем плагины для разработки с флагом -D:   
-`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader`
+
+`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse`
 
 Используемые плагины для разработки:
 - **webpack** - непосредственно webpack
@@ -15,12 +18,14 @@
 - **path** - для работы с путями (подключить в webpack.config.js)
 - **html-webpack-plugin** - позволяет взаимодействовать с index.html – во время сборки автоматически подключает все скрипты в index.html и добавляет index.html в папку сборки (подключить в webpack.config.js)
 - **clean-webpack-plugin** – очищает папку сборки перед новой сборкой (подключить в webpack.config.js)
+- **papaparse** - для работы *csv-loader* необходимо дополнительно установить *papaparse*, который парсит *csv* в *js*
 
 Используемые загрузчики (loaders) для разработки:
 - **css-loader** - позволяет webpack понимать импорты css внутри css и js файлов
 - **style-loader** - добавляет стили в секцию <head> в html
 - **file-loader** - позволяет работать с файлами
-
+- **xml-loader** - позволяет работать с xml
+- **csv-loader** - позволяет работать с csv
 ------------
 
 Устанавливаем библиотеки:
