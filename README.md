@@ -37,15 +37,19 @@
 
 ------------
 
-В *package.json*, разделе "scripts" прописываем команды:
-- npm run dev – для запуска dev сервера в режиме разработки
-- npm run build – для сборки проекта
+В *package.json*, в разделе "scripts" прописываем команды:
+- *npm run dev* – для сборки проекта в режиме development (все js-файлы сбилжены в несжатом виде, после внесения изменений - нужно заново выполнять npm run dev) 
+- *npm run watch* – для сборки проекта в режиме development (все js-файлы сбилжены в несжатом виде, после внесения изменений - происходит слежение за обновлениями, поэтому не нужно заново выполнять npm run watch, а достаточно обновить страницу) 
+- *npm run start* – для запуска webpack-dev-server в режиме разработки (сбилженные файлы не существуют - они хранятся в оперативной памяти + работает livereload)
+- *npm run build* – для сборки проекта в режиме production (все js-файлы сбилжены в единый файл)
 
 ```json
-      "scripts": {
-        "dev": "webpack-dev-server --open --mode development",
-        "build": "webpack --mode production"
-      },
+	"scripts": {
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+		"start": "webpack-dev-server --mode development --open",
+		"build": "webpack --mode production"
+  },
 ```
 
 ------------
