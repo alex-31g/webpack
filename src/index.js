@@ -1,16 +1,18 @@
-// расширение .js можно не указывать, так как по умолчанию webpack работает с js и json
-import one from './file_1';
+// При импортах, расширения .js и .json можно не указывать, так как по умолчанию webpack работает с js и json.
+// Чтобы не указывать другие расширения, в файле webpack.config.js необходимо добавить настройку resolve и в свойстве extensions указать с какими расширениями мы работаем
+
+// импорт с помощью @ - это элиас, который прописан в файле webpack.config.js, в свойстве alias
+import one from '@models/file_1';
 
 import './styles/styles.css';
 
-// расширение .json можно не указывать, так как по умолчанию webpack работает с js и json
-import json from './assets/json';
+import json from '@assets/json';
 
-import logo from './assets/webpack-logo.png';
+import logo from '@assets/webpack-logo.png';
 
-import xml from './assets/data.xml';
+import xml from '@assets/data.xml';
 
-import csv from './assets/data.csv';
+import csv from '@assets/data.csv';
 
 // ===========================
 

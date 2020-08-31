@@ -8,20 +8,20 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  // context - указываем в какой директории лежат все исходники приложения
+  // context - настройка, которая указывает в какой директории лежат все исходники приложения
   // path.resolve() - принимает составные части путей и возвращает абсолютный путь
   // __dirname - это абсолютный путь к директории данного файла
   context: path.resolve(__dirname, 'src'),
 
   // mode: 'development', // в каком режиме делать сборку проекта
 
-  // файл для входа в приложение
+  // настройка, которая указывает файл для входа в приложение
   entry: {
     main: './index.js',
   },
 
   // https://webpack.js.org/configuration/output/
-  // output - сообщает webpack, где и как хранить собранные файлы
+  // output - настройка, которая указывает где и как хранить собранные файлы
   output: {
     // filename - в какой файл собираем проект.
     // Здесь происходит считывание всех полей из поля entry и их сборка.
@@ -36,6 +36,17 @@ module.exports = {
 
     // path - путь к директории, где будет храниться собранный проект
     path: path.resolve(__dirname, './dist'),
+  },
+
+  // resolve - настройка, которая облегчает работу с импортом файлов
+  resolve: {
+    // extensions - указывает, какие расширения необходимо понимать по умолчанию при импорте файлов
+    extensions: ['.js', '.json', '.png'],
+    // alias - позволяет создавать алиасы для длинных путей, чтобы при импорте было удобнее
+    alias: {
+      '@models': path.resolve(__dirname, 'src/models'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+    },
   },
 
   // plugins - содержит список подключаемых плагинов
