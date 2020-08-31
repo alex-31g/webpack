@@ -4,6 +4,7 @@
 // импорт с помощью @ - это элиас, который прописан в файле webpack.config.js, в свойстве alias
 import one from '@models/file_1';
 import './babel_test';
+import './ts_test.ts';
 
 import './styles/styles.css';
 import './styles/sass.sass';

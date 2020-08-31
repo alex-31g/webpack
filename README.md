@@ -40,17 +40,18 @@ https://webpack.js.org/loaders/
 
 ------------
 
-**Babel** – это транспайлер, который переписывает код современного стандарта на код стандарта ES5, делая код понятным для всех браузеров
+### Babel – это транспайлер, который переписывает код современного стандарта на код стандарта ES5, делая код понятным для всех браузеров
 
 Установка:
 
-`npm i -D @babel/core babel-loader @babel/preset-env @babel/polyfill @babel/plugin-proposal-class-properties`
+`npm i -D @babel/core babel-loader @babel/preset-env @babel/polyfill @babel/plugin-proposal-class-properties @babel/preset-typescript`
 
-**@babel/core** - непосредственно babel
-**babel-loader** - загрузчик, который позволяет работать с babel
-**@babel/preset-env** - предустановка, которая позволяет использовать последнюю версию JavaScript без необходимости управления тем, какие преобразования синтаксиса необходимы вашей целевой среде
-**@babel/polyfill** - необходимый полифилл, который необходимо подключить в webpack.config.js в поле entry.main
-**@babel/plugin-proposal-class-properties** - плагин, который позволяет работать с классами
+- **@babel/core** - непосредственно babel
+- **babel-loader** - загрузчик, который позволяет работать с babel
+- **@babel/preset-env** - пресет, который позволяет использовать последнюю версию JavaScript, делая код понятным для всех браузеров
+- **@babel/polyfill** - необходимый полифилл, который необходимо подключить в webpack.config.js в поле entry.main
+- **@babel/plugin-proposal-class-properties** - плагин, который позволяет работать с классами в современном синтаксисе
+- **@babel/preset-typescript** - преобразование ts в js
 
 ------------
 
