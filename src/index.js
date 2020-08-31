@@ -5,6 +5,7 @@
 import one from '@models/file_1';
 
 import './styles/styles.css';
+import './styles/sass.sass';
 
 import json from '@assets/json';
 

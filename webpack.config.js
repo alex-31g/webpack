@@ -1,13 +1,9 @@
 // модуль path - для работы с путями
 const path = require('path');
 
-// html-webpack-plugin необходимо также подключить в поле plugins
+// webpack плагины необходимо также подключить в поле plugins
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-
-// clean-webpack-plugin необходимо также подключить в поле plugins
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-// copy-webpack-plugin необходимо также подключить в поле plugins
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
@@ -99,8 +95,14 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        // file-loader - позволяет работать с файлами
+        // в регулярке указано - sass или scss
+        test: /\.s[ac]ss$/,
+        // sass-loader - позволяет преобразовывать sass или scss в css
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.(png|jpg|svg|gif)$/,
+        // file-loader - позволяет работать с файлами
         use: ['file-loader'],
       },
       {

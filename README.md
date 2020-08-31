@@ -17,7 +17,7 @@ https://webpack.js.org/loaders/
 
 Устанавливаем плагины с флагом -D, которые необходимы только на этапе разработки (плагин будет отображается в "devDependencies" файла package.json):   
 
-`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse copy-webpack-plugin`
+`npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse copy-webpack-plugin node-sass sass-loader`
 
 Используемые плагины для разработки:
 - **webpack** - непосредственно webpack
@@ -28,13 +28,16 @@ https://webpack.js.org/loaders/
 - **clean-webpack-plugin** – очищает папку сборки перед новой сборкой (подключить в webpack.config.js)
 - **papaparse** - для работы *csv-loader* необходимо дополнительно установить *papaparse*, который парсит *csv* в *js*
 - **copy-webpack-plugin** - позволяет переносить статические файлы из одного места в другое (подключить в webpack.config.js)
+- **node-sass** - содержит функционал препроцессора sass и scss (для его работы необходимо дополнительно установить *sass-loader*)
 
 Используемые загрузчики (loaders) для разработки:
 - **css-loader** - позволяет webpack понимать импорты css внутри css и js файлов
-- **style-loader** - добавляет стили в секцию <head> в html
+- **style-loader** - добавляет стили в секцию <head> в html в режиме разработки
 - **file-loader** - позволяет работать с файлами
 - **xml-loader** - позволяет работать с xml
-- **csv-loader** - позволяет работать с csv
+- **csv-loader** - позволяет работать с csv (зависим от papaparse плагина)
+- **sass-loader** - позволяет преобразовывать sass или scss в css (зависим от node-sass плагина)
+
 ------------
 
 Устанавливаем плагины, которые необходимы для работы продукта (плагин будет отображается в "dependencies" файла package.json):
