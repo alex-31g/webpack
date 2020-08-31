@@ -7,7 +7,7 @@
 
 ------------
 
-Устанавливаем плагины для разработки с флагом -D:   
+Устанавливаем плагины с флагом -D, которые необходимы только на этапе разработки (плагин будет отображается в "devDependencies" файла package.json):   
 
 `npm i -D webpack webpack-cli webpack-dev-server path html-webpack-plugin clean-webpack-plugin css-loader style-loader file-loader csv-loader papaparse`
 
@@ -28,11 +28,11 @@
 - **csv-loader** - позволяет работать с csv
 ------------
 
-Устанавливаем библиотеки:
+Устанавливаем плагины, которые необходимы для работы продукта (плагин будет отображается в "dependencies" файла package.json):
 
 `npm i normalize.css`
 
-Используемые библиотеки:
+Используемые плагины:
 - **normalize.css** - современная альтернатива css-reset
 
 ------------

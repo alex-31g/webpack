@@ -39,6 +39,6 @@ console.log('xml.email.to:', xml.email.to[0]);
 
 // после импорта csv мы можем сразу, без преобразования в объект, работать с ним как с js
 console.log('CSV:', csv);
-console.log('CSV:', csv[0]);
+console.log('CSV[0]:', csv[0]);
 
 // ===========================
