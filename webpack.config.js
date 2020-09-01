@@ -8,7 +8,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // считываем системную переменную NODE_ENV, которая говорит в каком режиме мы находимся - разработка или продакшин
 const isDev = process.env.NODE_ENV === 'development';
-console.log('isDev:', isDev);
 
 module.exports = {
   // context - настройка, которая указывает в какой директории лежат все исходники приложения
