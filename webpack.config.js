@@ -122,20 +122,25 @@ module.exports = {
         use: ['csv-loader'],
       },
 
-      // настройка BABEL
+      // настройка BABEL + ESLint
       {
         test: /\.js$/,
         // exclude - говорит, что не нужно входить в папку node_modules, так как библиотеки не нужно транспайлить с помощью babel
         exclude: /node_modules/,
         // файлы, которые соответствуют регулярке test, проганяем через лоадеры
-        loader: {
-          loader: 'babel-loader',
-          // добавляем дополнительные опции при работе с лоадером
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties'],
+        use: [
+          {
+            loader: 'babel-loader',
+            // добавляем дополнительные опции при работе с лоадером
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-class-properties'],
+            },
           },
-        },
+          {
+            loader: 'eslint-loader',
+          },
+        ],
       },
 
       // настройка TYPESCRIPT
